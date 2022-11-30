@@ -3,8 +3,8 @@ const Model=require('../models/Model');
 const router=express.Router();
 router.post('/post',async(req,res)=>{
     try{
-   await Model.insertMany(req.body)
-   console.log(Model)
+  result= await Model.insertMany(req.body)
+   res.send(result);
     }
     catch(err){
         console.log(err);
@@ -12,9 +12,9 @@ router.post('/post',async(req,res)=>{
     }
 })
 router.get('/get',async(req,res)=>{
-    try{
-        res.send(Model.find())
-    }
-    catch(err){res.send(err)}
+   Model.find(({}),function(err,result){
+    res.send(result);
+   }
+   )
 })
 module.exports = router ;
