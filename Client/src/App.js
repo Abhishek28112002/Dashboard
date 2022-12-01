@@ -70,7 +70,8 @@ function App() {
       setorginal_data(data);
       setnewdata(data);
     };
-    logdata();
+    setInterval(logdata, 1000);
+   
   }, []);
 
   return (
@@ -191,6 +192,7 @@ function App() {
                 <div className="card">
                   <div className="card-header">
                     <h3 className="heading">Data Visualization Dashboard</h3>
+                    <h3>{newdata.length}</h3>
                   </div>
                   <div className="card-body">
                     <div className="table-responsive">
