@@ -21,7 +21,7 @@ function App() {
     newArr[0][obj] = e.target.value;
     setfilter(newArr);
     let updateddata = orginal_data.filter((data) => {
-      return filter[0]["end_year"] ? filter[0]["end_year"] == data.end_year : 1;
+      return filter[0]["end_year"] ? filter[0]["end_year"]==data.end_year : 1;
     });
     updateddata = updateddata.filter((data) => {
       return filter[0]["topic"]
@@ -70,7 +70,7 @@ function App() {
       setorginal_data(data);
       setnewdata(data);
     };
-    setInterval(logdata, 1000);
+   logdata();
    
   }, []);
 
