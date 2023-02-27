@@ -18,7 +18,19 @@
   --new-content: rgba(255, 255, 255, .5);
   --indicator: rgba(255, 255, 255,.7)
 }
-
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: #fff;
+  padding:10px;
+}
+.grid-item {
+  
+  margin:2px;
+ 
+  font-size: 20px;
+  text-align: center;
+}
 * {
   padding: 0;
   margin: 0;
@@ -572,8 +584,8 @@ header {
   padding: 1rem 1.5rem;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
   position: fixed;
-  left: 250px;
-  width: calc(100% - 250px);
+ color:#001623;
+  width: calc(100% );
   top: 0;
   z-index: 100;
   transition: left 300ms;
@@ -678,7 +690,6 @@ body.light .heading {
   filter: brightness(140%);
   background: var(--pink);
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -759,9 +770,6 @@ input{
   margin-top: 3.5rem;
   display: grid;
   grid-gap: 2rem;
- height:500px;
- overflow-y: auto;
- overflow-x: auto;
 
 }
 
@@ -1042,7 +1050,12 @@ tr td:last-child {
       padding-left: 0rem;
       
   }
-
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    background-color: #fff;
+    padding: 1px;
+  }
   .light .sidebar li a span{
           font-size: 2rem;
           background: var(--pink);
@@ -1071,8 +1084,8 @@ tr td:last-child {
   }
 
   .main-content header {
-      width: calc(100% - 70px);
-      left: 70px;
+      width: calc(100%);
+    
   }
 
   .sidebar {
@@ -1127,7 +1140,12 @@ tr td:last-child {
   .display {
       font: 600 1.5rem rajdhani;
   }
-
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #fff;
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1236,6 +1254,7 @@ tr td:last-child {
   header  label {
       display: none !important;
   }
+
 }
 
 
@@ -1251,6 +1270,7 @@ bottom: 0;
 width: calc(100% - 45px);
 
 }
+
 }
 
 .footer .word {
@@ -1267,17 +1287,25 @@ text-align: center;
   font-size: 3rem;
   
 }
+
 }
 @media (max-width: 1000px) {
 .footer {
   font-size: 2rem;
   
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #fff;
+  padding: 1px;
+}
 }
 @media (max-width: 500px) {
 .footer {
   font-size: 8vw;
 }
+
 }
 .fa-heart {
 color: #920121;
