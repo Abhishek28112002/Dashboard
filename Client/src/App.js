@@ -5,8 +5,8 @@ import Chart from "./Charts.js";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import Delete from "./delete-icon.svg";
-import Edit from "./task-edit-icon.svg";
+import Delete from "./Assets//delete-icon.svg";
+import Edit from "./Assets/task-edit-icon.svg";
 import {
   Fetchgetapi,
   Fetchpostapi,
@@ -27,7 +27,6 @@ function App() {
   };
 
   const EditTodo = async () => {
-    
     const response = await Fetchputapi({
       _id: todoId,
       title: title,
@@ -40,25 +39,25 @@ function App() {
   const dragOverItem = React.useRef(null);
 
   const handleSort = () => {
-    //duplicate items
-    let _fruitItems = [...orginal_data];
+    
+    let _TodoItems = [...orginal_data];
 
-    //remove and save the dragged item content
-    const draggedItemContent = _fruitItems.splice(dragItem.current, 1)[0];
-    //switch the position
-    _fruitItems.splice(dragOverItem.current, 0, draggedItemContent);
+   
+    const draggedItemContent = _TodoItems.splice(dragItem.current, 1)[0];
+   
+    _TodoItems.splice(dragOverItem.current, 0, draggedItemContent);
 
-    //reset the position ref
+ 
     dragItem.current = null;
     dragOverItem.current = null;
 
-    //update the actual array
-    setorginal_data(_fruitItems);
-    setnewdata(_fruitItems);
-    _fruitItems.map(async (item, index) => {
+    
+    setorginal_data(_TodoItems);
+    setnewdata(_TodoItems);
+    _TodoItems.map(async (item, index) => {
       item.todono = index + 1;
       const response = await Fetchputapi(item);
-      //console.log(response);
+     
     });
   };
 
@@ -172,8 +171,8 @@ function App() {
                               style={{ width: "1rem", cursor: "pointer" }}
                               onClick={() => {
                                 settodoId(data._id);
-                                settitle(data.title)
-                                setdescription(data.description)
+                                settitle(data.title);
+                                setdescription(data.description);
                                 setmodal(true);
                               }}
                             />
