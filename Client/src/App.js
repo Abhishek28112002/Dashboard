@@ -39,25 +39,16 @@ function App() {
   const dragOverItem = React.useRef(null);
 
   const handleSort = () => {
-    
     let _TodoItems = [...orginal_data];
-
-   
     const draggedItemContent = _TodoItems.splice(dragItem.current, 1)[0];
-   
     _TodoItems.splice(dragOverItem.current, 0, draggedItemContent);
-
- 
     dragItem.current = null;
     dragOverItem.current = null;
-
-    
     setorginal_data(_TodoItems);
     setnewdata(_TodoItems);
     _TodoItems.map(async (item, index) => {
       item.todono = index + 1;
       const response = await Fetchputapi(item);
-     
     });
   };
 
